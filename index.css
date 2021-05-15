@@ -1,0 +1,21 @@
+body {
+  background-color: #000;
+}
+
+#container {
+  margin: 5em auto;
+  width: fit-content;
+}
+
+canvas#main {
+  border: solid #FFF;
+}
+
+canvas {
+  display: inline-block;
+  vertical-align: top;
+}
+
+canvas#aux {
+  margin: 0 0 auto 1em;
+}
