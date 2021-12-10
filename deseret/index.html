@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Deseret to IPA Converter</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                padding: 2em;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+                height: 100%;
+                margin: auto;
+            }
+
+            textarea {
+                resize: none;
+            }
+
+            textarea:focus {
+                outline: none;
+            }
+
+            .common {
+                border-style: solid;
+                border-width: medium;
+                border-radius: 10px;
+                border-color: #666;
+                font-size: 18pt;
+                font-family: serif;
+                flex: 1 1 0;
+                padding: 8px 15px 8px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            const d = {
+                "𐐨": "iː",
+                "𐐬": "oʊ",
+                "𐐰": "æ",
+                "𐐴": "aɪ",
+                "𐐸": "h",
+                "𐐼": "d",
+                "𐑀": "g",
+                "𐑄": "ð",
+                "𐑈": "ʒ",
+                "𐑌": "n",
+                "𐐩": "eɪ",
+                "𐐭": "uː",
+                "𐐱": "ɒ",
+                "𐐵": "aʊ",
+                "𐐹": "p",
+                "𐐽": "tʃ",
+                "𐑁": "f",
+                "𐑅": "s",
+                "𐑉": "r",
+                "𐑍": "ŋ",
+                "𐐪": "ɑː",
+                "𐐮": "ɪ",
+                "𐐲": "ʌ",
+                "𐐶": "w",
+                "𐐺": "b",
+                "𐐾": "dʒ",
+                "𐑂": "v",
+                "𐑆": "z",
+                "𐑊": "l",
+                "𐐫": "ɔː",
+                "𐐯": "ɛ",
+                "𐐳": "ʊ",
+                "𐐷": "j",
+                "𐐻": "t",
+                "𐐿": "k",
+                "𐑃": "θ",
+                "𐑇": "ʃ",
+                "𐑋": "m",
+                "𐑎": "ɔɪ",
+                "𐑏": "juː"
+            };
+
+            function translate() {
+                var out = "";
+                var text = document.getElementById("input").value;
+                Array.from(text).forEach(function(c) {
+                    var cl = c.toLowerCase();
+                    if (d[cl]) {
+                        out += d[cl];
+                    } else {
+                        out += c;
+                    }
+                });
+                document.getElementById("output").innerHTML = out;
+            }
+        </script>
+        <div>
+            <textarea class="common" id="input" spellcheck="false" oninput="translate()" placeholder="Enter deseret..."></textarea>
+            <p class="common" id="output"></p>
+        </div>
+    </body>
+</html>
